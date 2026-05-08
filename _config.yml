@@ -1,4 +1,16 @@
+title: "Patricio Cárdenas | Geología Digital"
+description: "Blog sobre geología y uso de programas para procesar datos geológicos"
 theme: minima
-title: Patricio Cárdenas | Geología Digital
+
+# Configuración de Rutas
 baseurl: "/Geologia_Digital"
 url: "https://patriciocardenasgon-svg.github.io"
+
+# Configuración de Comentarios (Si usas Disqus en el futuro)
+disqus:
+  shortname: "geologia-digital"
+
+# Configuración de compilación
+markdown: kramdown
+plugins:
+  - jekyll-feed
