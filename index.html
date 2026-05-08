@@ -1,133 +1,23 @@
+---
+layout: default
+---
+
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patricio Cárdenas | Geología Digital</title>
-    <style>
-        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fcfcfc; color: #222; }
-
-        /* Cuadrícula superior con tus imágenes reales */
-        .top-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); 
-            height: 300px;
-            background: #000;
-        }
-
-        .grid-item {
-            position: relative;
-            overflow: hidden;
-            border-right: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-            transition: 0.4s ease;
-        }
-
-        .grid-item:hover img { opacity: 1; transform: scale(1.05); }
-
-        .grid-text {
-            position: absolute;
-            bottom: 0;
-            padding: 20px;
-            color: white;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-        }
-
-        /* Encabezado Profesional */
-        header {
-            background: #111;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .logo-container {
-            border: 3px solid white;
-            display: inline-block;
-            padding: 15px 30px;
-        }
-
-        .logo-container h1 {
-            margin: 0;
-            font-size: 2em;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        /* Contenido Principal */
-        .main-container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section-heading {
-            border-bottom: 2px solid #222;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            font-size: 1.2em;
-            text-transform: uppercase;
-        }
-
-        .project-description {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #444;
-        }
-    </style>
+    <title>{{ site.title }}</title>
 </head>
 <body>
 
-    <!-- Galería superior usando tu carpeta 'imaganes' -->
-    <div class="top-grid">
-        <div class="grid-item">
-            <img src="imaganes/hidrogeologia.png" alt="Hidrogeología">
-            <div class="grid-text">Hidrogeología</div>
-        </div>
-        <div class="grid-item">
-            <img src="imaganes/modelo.png" alt="Modelado">
-            <div class="grid-text">Modelado</div>
-        </div>
-        <div class="grid-item">
-            <img src="imaganes/geofisica.png" alt="Geofísica">
-            <div class="grid-text">Geofísica</div>
-        </div>
-        <div class="grid-item">
-            <img src="imaganes/mapeo.png" alt="Mapeo">
-            <div class="grid-text">Mapeo Geológico</div>
-        </div>
-    </div>
+    <h1>Publicaciones Recientes</h1>
 
-    <header>
-        <div class="logo-container">
-            <h1>Patricio Cárdenas</h1>
-        </div>
-        <p style="margin-top: 15px; opacity: 0.6; letter-spacing: 2px; text-transform: uppercase;">
-            Geólogo | Consultoría y Geología Digital
-        </p>
-    </header>
-
-    <div class="main-container">
-        <div class="section-heading">Proyectos y Análisis Técnico</div>
-        <div class="project-description">
-            <p>Bienvenido a mi portal profesional. Aquí comparto mis trabajos enfocados en la geología técnica y digital.</p>
-            <p>Podés editar este texto para incluir detalles sobre tus prácticas en YMAD - Farallón Negro o tus trabajos de estimación de reservas.</p>
-        </div>
-    </div>
-
-    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8em;">
-        &copy; 2026 - San Miguel de Tucumán
-    </footer>
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
+        </li>
+      {% endfor %}
+    </ul>
 
 </body>
 </html>
