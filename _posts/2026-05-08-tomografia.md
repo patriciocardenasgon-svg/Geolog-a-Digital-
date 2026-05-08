@@ -98,16 +98,11 @@ Conclusiones
 
 Referencias
 García, J. W. y D'Urso, C. H. (2015). Guía de Trabajos Prácticos: Métodos Geoeléctricos. Cátedra de Hidrogeología, Facultad de Ciencias Naturales e Instituto Miguel Lillo, Universidad Nacional de Tucumán.
-<hr>
-<div style="margin-top: 50px;">
-  <h3>Comentarios y Consultas</h3>
-  <p><small>Dejá tu opinión o duda técnica sobre este informe aquí abajo:</small></p>
-  <script src="https://utteranc.es/client.js"
-          repo="patriciocardenasgon-svg/Geologia_Digital"
-          issue-term="pathname"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-</div>
+<script src="https://utteranc.es/client.js"
+        repo="patriciocardenasgon-svg/Geologia_Digital"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
