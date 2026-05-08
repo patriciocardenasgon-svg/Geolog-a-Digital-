@@ -8,39 +8,50 @@ title: "Patricio Cárdenas | Geología Digital"
   <p>Exploración, procesamiento de datos y recursos educativos.</p>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px;">
-  <div style="text-align: center; flex: 1; min-width: 180px; max-width: 220px;">
-    <img src="/Geologia_Digital/imaganes/geofisica.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
-    <p><small>Geofísica</small></p>
+<div style="display: flex; align-items: flex-start; gap: 20px; justify-content: space-between;">
+  
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+    <div style="text-align: center;">
+      <img src="/Geologia_Digital/imaganes/geofisica.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
+      <p><small>Geofísica</small></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="/Geologia_Digital/imaganes/mapeo.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
+      <p><small>Mapeo</small></p>
+    </div>
   </div>
-  <div style="text-align: center; flex: 1; min-width: 180px; max-width: 220px;">
-    <img src="/Geologia_Digital/imaganes/mapeo.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
-    <p><small>Mapeo</small></p>
+
+  <div style="flex: 1.5; padding: 10px; border-top: 2px solid #333;">
+    <h2 style="margin-top: 0;">Publicaciones</h2>
+    <ul style="list-style-type: none; padding: 0;">
+      {% for post in site.posts %}
+        <li style="margin-bottom: 20px;">
+          <a href="{{ site.baseurl }}{{ post.url }}" style="font-size: 1.2em; font-weight: bold; text-decoration: none; color: #0056b3;">
+            {{ post.title }}
+          </a>
+          <br>
+          <small style="color: #666;">Fecha: {{ post.date | date: "%d/%m/%Y" }}</small>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
-  <div style="text-align: center; flex: 1; min-width: 180px; max-width: 220px;">
-    <img src="/Geologia_Digital/imaganes/modelo.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
-    <p><small>Modelado 3D</small></p>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+    <div style="text-align: center;">
+      <img src="/Geologia_Digital/imaganes/modelo.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
+      <p><small>Modelado 3D</small></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="/Geologia_Digital/imaganes/hidrogeologia.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
+      <p><small>Hidrogeología</small></p>
+    </div>
   </div>
-  <div style="text-align: center; flex: 1; min-width: 180px; max-width: 220px;">
-    <img src="/Geologia_Digital/imaganes/hidrogeologia.png" style="width: 100%; border-radius: 4px; border: 1px solid #ddd;">
-    <p><small>Hidrogeología</small></p>
-  </div>
+
 </div>
 
-<hr>
+<hr style="margin-top: 40px;">
 
-<h2>Publicaciones</h2>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%d/%m/%Y" }}
-    </li>
-  {% endfor %}
-</ul>
-
-<hr>
-
-<div style="margin-top: 30px; font-size: 0.85em; color: #666; text-align: center;">
+<div style="font-size: 0.85em; color: #666; text-align: center;">
   <p>Contacto: <a href="mailto:patriciocardenasgon@gmail.com">patriciocardenasgon@gmail.com</a> | 
   <a href="https://github.com/patriciocardenasgon-svg">GitHub</a></p>
 </div>
