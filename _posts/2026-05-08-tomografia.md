@@ -67,11 +67,15 @@ Figura 4. Visualización 3D mediante planos de resistividad apilada. Se observa 
 Esta visualización permite identificar la continuidad vertical de las unidades. Por ejemplo, se observa cómo la unidad conductiva superficial disminuye su espesor hacia el Oeste, mientras que el cuerpo de alta resistividad (gravas) gana potencia en los niveles basales.
 
 4. Discusión
+   
 ¿Por qué el triángulo en Python no es "perfecto"?
+
 En tu gráfico de Python (Figura 1), los bordes se ven escalonados o ligeramente irregulares por dos motivos:
 •	Discretización de los datos: Como se observa en la tabla de datos, el nivel L1 tiene 45 puntos, pero el L15 tiene solo 1 punto. Python (usando librerías como Matplotlib) intenta dibujar el contorno uniendo esos puntos específicos. Al no haber datos en las diagonales exactas, el algoritmo de interpolación genera ese borde "serruchado" o irregular. 
 •	Densidad variable: Al tener muchos puntos arriba y casi ninguno abajo, la malla de interpolación se vuelve más "tosca" a medida que profundizas. El software "estira" los colores hasta donde encuentra el último dato real, y si los datos no terminan en una línea recta perfecta en el espacio X, Y, el borde reflejará esa irregularidad. 
+
  ¿Por qué en Surfer hay que recortarla (Blanking)?
+ 
 Surfer funciona de una manera distinta a los scripts típicos de Python:
 •	Extrapolación por defecto: Surfer es un programa de interpolación "rectangular". Cuando le das tus datos, él crea una rejilla (grid) que cubre desde el X mínimo al X máximo, y desde el Y mínimo al Y máximo. 
 •	El problema del "Inventado": Como Surfer ve un espacio vacío en las esquinas superiores e inferiores fuera del triángulo de datos, intenta "predecir" qué valores habría ahí basándose en los puntos cercanos. Esto genera colores en zonas donde nunca mediste nada. 
