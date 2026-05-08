@@ -51,7 +51,7 @@ Figura 1. Sección de resistividad eléctrica procesada en Python. Se observa la
 ![Descripción corta](/Geologia_Digital/imaganes/tomo2.png)
 Figura 2: Modelo de contornos suavizado en Surfer. 
 Fue necesario recortar el modelo final para restringir la visualización únicamente al dominio donde existió información de campo efectiva
-![Descripción corta](/Geologia_Digital/imaganes/ttomo3.png)
+![Descripción corta](/Geologia_Digital/imaganes/tomo3.png)
 Figura3. Tomografía eléctrica con surfer después de aplicar el protocolo de recorte (blanking)
 
  Interpretación de Unidades Geofísicas
