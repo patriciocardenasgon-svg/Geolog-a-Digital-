@@ -5,11 +5,14 @@ date: 2026-05-08
 ---
 
 Evaluación Comparativa de Procesamiento Geofísico: Implementación de Algoritmos en Python y Modelado en Golden Surfer para Tomografías Eléctricas 2D.
-Autor: Patricio Cárdenas
+
 Autor:Patricio Cardenas
+
 Resumen
+
 El presente trabajo describe la caracterización geofísica del subsuelo somero en el sector este del Parque 9 de Julio (San Miguel de Tucumán, Argentina), mediante la aplicación de Tomografía de Resistividad Eléctrica (TRE) en 2D. El área de estudio se emplaza sobre depósitos cuaternarios del Río Salí, caracterizados por una secuencia sedimentaria granocreciente. Para el procesamiento de los datos brutos, se implementó un flujo de trabajo híbrido que integró algoritmos de validación en Python —utilizando bibliotecas de código abierto como Pandas, NumPy y Matplotlib— y el modelado final por interpolación Kriging en Golden Surfer. Los resultados permitieron identificar tres unidades geoeléctricas principales: una capa superficial conductiva (20-45 Ω X m) asociada a limos arcillosos, que transiciona a una unidad de alta resistividad (> 100 Ω X m) a partir de los 10 metros de profundidad, interpretada como el techo de la formación de gravas fluviales. La discusión técnica destaca que el uso de software libre, potenciado por la asistencia de Inteligencia Artificial (IA), permitió a un usuario sin experiencia previa en programación ejecutar análisis complejos y visualizaciones 3D con alta precisión científica. Se concluye que este enfoque no solo garantiza la fidelidad de los datos frente a la interpolación comercial, sino que democratiza el acceso a herramientas de prospección avanzada al eliminar la dependencia de licencias de alto costo.
 Palabras clave: Geofísica 2D, Tomografía de Resistividad, Python, Software Libre, Parque 9 de Julio, Inteligencia Artificial.
+
 1. Antecedentes y Contexto Geológico
 El área de estudio se localiza en el sector este de la ciudad de San Miguel de Tucumán (Argentina), en terrenos correspondientes a los niveles cuaternarios depositados por el Río Salí, principal colector de la provincia. Estratigráficamente, el subsuelo se caracteriza por una secuencia granocreciente en profundidad: los niveles superiores presentan limos arcillosos que conforman el suelo vegetal, los cuales transicionan hacia arenas medias a gruesas y, finalmente, hacia potentes depósitos de gravas medias a gruesas que se extienden hasta profundidades de 20 a 30 metros. 
 Dada la relevancia urbana y ambiental del Parque 9 de Julio, se planteó la ejecución de una Tomografía de Resistividad Eléctrica (TRE) con una extensión de 48 metros y orientación Norte-Sur. El objetivo principal de esta prospección es caracterizar el subsuelo somero para generar información de base aplicable a estudios ambientales y geotécnicos
@@ -38,17 +41,17 @@ Antes de tocar cualquier software, el Excel debe estar limpio.
 Lo valores de profundidad y resistencia se obtiene de los datos de campo y  el cálculo de la distancia se describe a continuación 
 El cálculo de la Distancia (X)
 La distancia horizontal se calcula buscando el centro exacto entre los electrodos externos A y B. La fórmula es:
-![Descripción corta](/Geologia_Digital/imaganes/tomo.0.png)
+X=(A+B)/2
 •	Limpieza: Eliminar valores negativos de resistividad (ruido de campo) y verificar que las profundidades sean negativas (eje Y descendente).
  
 3. Resultados y Visualización
 A continuación se presentan los perfiles de resistividad obtenidos:
 ![Descripción corta](/Geologia_Digital/imaganes/tomo.1.png)
 Figura 1. Sección de resistividad eléctrica procesada en Python. Se observa la distribución discreta de los puntos de medición.
-![Descripción corta](/Geologia_Digital/imaganes/tomo.2.png)
+![Descripción corta](/Geologia_Digital/imaganes/tomo2.png)
 Figura 2: Modelo de contornos suavizado en Surfer. 
 Fue necesario recortar el modelo final para restringir la visualización únicamente al dominio donde existió información de campo efectiva
-![Descripción corta](/Geologia_Digital/imaganes/tomo.3.png)
+![Descripción corta](/Geologia_Digital/imaganes/ttomo3.png)
 Figura3. Tomografía eléctrica con surfer después de aplicar el protocolo de recorte (blanking)
 
  Interpretación de Unidades Geofísicas
@@ -57,7 +60,7 @@ De acuerdo a los valores de resistividad (Ω x m) observados, se identifican tr
 2.	Cuerpo de Resistividad Intermedia (50 - 80 Ω X m): Predomina en la zona central y superficial. Corresponde probablemente a suelos franco-arenosos con compactación moderada. 
 3.	Anomalía de Alta Resistividad (> 100 Ω X m): Se detecta un cuerpo prominente en la base del perfil, entre las progresivas 20 y 30 metros, a una profundidad de -10 a -15 metros.
 o	Interpretación: Esta zona (colores rojos intensos) indica un material mucho más resistivo. Podría tratarse de un nivel de gravas secas, restos de estructuras antiguas o una variación litológica hacia materiales más gruesos y menos porosos
-![Descripción corta](/Geologia_Digital/imaganes/tomo.4.png)
+![Descripción corta](/Geologia_Digital/imaganes/tomo.5.png)
 Figura 4. Visualización 3D mediante planos de resistividad apilada. Se observa la arquitectura interna de las capas de limos y gravas.
 Esta visualización permite identificar la continuidad vertical de las unidades. Por ejemplo, se observa cómo la unidad conductiva superficial disminuye su espesor hacia el Oeste, mientras que el cuerpo de alta resistividad (gravas) gana potencia en los niveles basales.
 
@@ -71,7 +74,7 @@ Surfer funciona de una manera distinta a los scripts típicos de Python:
 •	Extrapolación por defecto: Surfer es un programa de interpolación "rectangular". Cuando le das tus datos, él crea una rejilla (grid) que cubre desde el X mínimo al X máximo, y desde el Y mínimo al Y máximo. 
 •	El problema del "Inventado": Como Surfer ve un espacio vacío en las esquinas superiores e inferiores fuera del triángulo de datos, intenta "predecir" qué valores habría ahí basándose en los puntos cercanos. Esto genera colores en zonas donde nunca mediste nada. 
 •	El archivo de recorte (.bln): Para que el mapa sea científicamente válido, debes aplicar un proceso de Blanking (recorte). Esto le dice al programa: "Aunque calculaste valores para toda el área, por favor borra o vuelve invisibles las zonas donde no hubo paso de corriente eléctrica". 
-![Descripción corta](/Geologia_Digital/imaganes/tomo.5.png)
+![Descripción corta](/Geologia_Digital/imaganes/tomo6.png)
 Este trabajo destaca la transición hacia flujos de trabajo basados en software libre, utilizando Python para romper la dependencia de licencias comerciales costosas y garantizar la reproducibilidad científica. La implementación de estos algoritmos fue posible gracias a la Inteligencia Artificial (IA), que actuó como un puente técnico para traducir la lógica geológica en scripts funcionales sin requerir experiencia previa en programación. Esta sinergia entre código abierto e IA potencia la autonomía del geólogo, permitiendo generar visualizaciones avanzadas de alta calidad técnica con una inversión económica mínima.
 
 
