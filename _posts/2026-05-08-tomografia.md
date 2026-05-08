@@ -11,13 +11,15 @@ Autor:Patricio Cardenas
 Resumen
 
 El presente trabajo describe la caracterización geofísica del subsuelo somero en el sector este del Parque 9 de Julio (San Miguel de Tucumán, Argentina), mediante la aplicación de Tomografía de Resistividad Eléctrica (TRE) en 2D. El área de estudio se emplaza sobre depósitos cuaternarios del Río Salí, caracterizados por una secuencia sedimentaria granocreciente. Para el procesamiento de los datos brutos, se implementó un flujo de trabajo híbrido que integró algoritmos de validación en Python —utilizando bibliotecas de código abierto como Pandas, NumPy y Matplotlib— y el modelado final por interpolación Kriging en Golden Surfer. Los resultados permitieron identificar tres unidades geoeléctricas principales: una capa superficial conductiva (20-45 Ω X m) asociada a limos arcillosos, que transiciona a una unidad de alta resistividad (> 100 Ω X m) a partir de los 10 metros de profundidad, interpretada como el techo de la formación de gravas fluviales. La discusión técnica destaca que el uso de software libre, potenciado por la asistencia de Inteligencia Artificial (IA), permitió a un usuario sin experiencia previa en programación ejecutar análisis complejos y visualizaciones 3D con alta precisión científica. Se concluye que este enfoque no solo garantiza la fidelidad de los datos frente a la interpolación comercial, sino que democratiza el acceso a herramientas de prospección avanzada al eliminar la dependencia de licencias de alto costo.
-Palabras clave: Geofísica 2D, Tomografía de Resistividad, Python, Software Libre, Parque 9 de Julio, Inteligencia Artificial.
+Palabras clave: Geofísica 2D, Tomografía de Resistividad, Python, Software Libre, Parque 9 de Julio, Inteligencia Artificial. 
 
-1. Antecedentes y Contexto Geológico
+Antecedentes y Contexto Geológico
+
 El área de estudio se localiza en el sector este de la ciudad de San Miguel de Tucumán (Argentina), en terrenos correspondientes a los niveles cuaternarios depositados por el Río Salí, principal colector de la provincia. Estratigráficamente, el subsuelo se caracteriza por una secuencia granocreciente en profundidad: los niveles superiores presentan limos arcillosos que conforman el suelo vegetal, los cuales transicionan hacia arenas medias a gruesas y, finalmente, hacia potentes depósitos de gravas medias a gruesas que se extienden hasta profundidades de 20 a 30 metros. 
 Dada la relevancia urbana y ambiental del Parque 9 de Julio, se planteó la ejecución de una Tomografía de Resistividad Eléctrica (TRE) con una extensión de 48 metros y orientación Norte-Sur. El objetivo principal de esta prospección es caracterizar el subsuelo somero para generar información de base aplicable a estudios ambientales y geotécnicos
 
- 2. Metodología
+ Metodología
+ 
  Adquisición de Datos Geofísicos
 Para la caracterización del subsuelo en el sector del Parque 9 de Julio, se empleó el método de Tomografía de Resistividad Eléctrica (ERT) en 2D. Esta técnica permite obtener una sección transversal de la resistividad eléctrica del terreno mediante la inyección de corriente y la medición del potencial resultante a través de un arreglo multielectródico. 
 El dispositivo experimental consistió en:
@@ -45,7 +47,8 @@ La distancia horizontal se calcula buscando el centro exacto entre los electrodo
 
 •	Limpieza: Eliminar valores negativos de resistividad (ruido de campo) y verificar que las profundidades sean negativas (eje Y descendente).
  
-3. Resultados y Visualización
+Resultados y Visualización
+
 A continuación se presentan los perfiles de resistividad obtenidos:
 ![Descripción corta](/Geologia_Digital/imaganes/tomo.1.png)
 Figura 1. Sección de resistividad eléctrica procesada en Python. Se observa la distribución discreta de los puntos de medición.
@@ -56,6 +59,7 @@ Fue necesario recortar el modelo final para restringir la visualización únicam
 Figura3. Tomografía eléctrica con surfer después de aplicar el protocolo de recorte (blanking)
 
  Interpretación de Unidades Geofísicas
+ 
 De acuerdo a los valores de resistividad (Ω x m) observados, se identifican tres unidades principales:
 1.	Capa Superior Conductiva (20 - 45 Ω X m): Ubicada en los primeros 4 metros de profundidad hacia el sector Este (derecha del perfil). Esta baja resistividad sugiere suelos con mayor contenido de humedad o presencia de limos arcillosos. 
 2.	Cuerpo de Resistividad Intermedia (50 - 80 Ω X m): Predomina en la zona central y superficial. Corresponde probablemente a suelos franco-arenosos con compactación moderada. 
@@ -66,7 +70,7 @@ Figura 4. Visualización 3D mediante planos de resistividad apilada. Se observa 
 
 Esta visualización permite identificar la continuidad vertical de las unidades. Por ejemplo, se observa cómo la unidad conductiva superficial disminuye su espesor hacia el Oeste, mientras que el cuerpo de alta resistividad (gravas) gana potencia en los niveles basales.
 
-4. Discusión
+Discusión
    
 ¿Por qué el triángulo en Python no es "perfecto"?
 
