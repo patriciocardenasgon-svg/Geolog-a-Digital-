@@ -2,52 +2,156 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Blog Profesional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patricio Cárdenas | Geología</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; }
-        .blog-post { 
-            max-width: 700px; 
-            margin: auto; 
-            background: white; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fcfcfc; color: #222; }
+
+        /* Grid de Imágenes de Proyectos Geológicos */
+        .top-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            height: 280px;
+            background: #000;
         }
-        .post-image { 
-            width: 100%; 
-            height: 350px; 
-            object-fit: cover; /* Esto evita que la imagen se estire feo */
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid rgba(255,255,255,0.05);
         }
-        .content { padding: 30px; }
-        h1 { color: #2c3e50; margin-top: 0; }
-        .badge { 
-            background: #3498db; 
-            color: white; 
-            padding: 5px 12px; 
-            border-radius: 20px; 
-            font-size: 0.8em; 
-            font-weight: bold; 
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: 0.4s ease;
+        }
+
+        .grid-item:hover img { opacity: 0.9; transform: scale(1.05); }
+
+        .grid-text {
+            position: absolute;
+            bottom: 0;
+            padding: 20px;
+            color: white;
+            font-size: 0.75em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+        }
+
+        /* Identidad Profesional */
+        header {
+            background: #111;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            border: 3px solid white;
+            display: inline-block;
+            padding: 15px 30px;
+            margin-bottom: 10px;
+        }
+
+        .logo-container h1 {
+            margin: 0;
+            font-size: 1.8em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .professional-title {
+            font-size: 0.9em;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* Contenido de Geología */
+        .main-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-heading {
+            border-bottom: 2px solid #222;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-block {
+            margin-bottom: 60px;
+        }
+
+        .project-block h2 { font-size: 1.6em; margin-bottom: 15px; }
+
+        .project-image-large {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .description-box {
+            font-size: 1.05em;
+            color: #444;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
 
-    <div class="blog-post">
-        <!-- Imagen Directa desde un servidor externo -->
-        <img src="https://images.unsplash.com/photo-1504198266304-482186a60f4c?auto=format&fit=crop&w=800&q=80" 
-             alt="Estratos Geológicos" 
-             class="post-image">
-        
-        <div class="content">
-            <span class="badge">GEOLOGÍA DIGITAL</span>
-            <h1>Análisis de Suelos y Modelado</h1>
-            <p>Bienvenido a mi bitácora. Aquí encontrarás mis trabajos sobre geociencias y los recursos educativos que desarrollo para secundaria.</p>
-            
-            <hr>
-            <p style="color: #7f8c8d; font-style: italic;">
-                Dato técnico: Esta imagen se carga directamente mediante un enlace "URL".
-            </p>
+    <!-- Galería de Especialidades Geológicas -->
+    <div class="top-grid">
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/500x400?text=Hidrogeologia">
+            <div class="grid-text">Hidrogeología</div>
         </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/500x400?text=Modelado+Matematico">
+            <div class="grid-text">Modelado</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/500x400?text=Geofisica">
+            <div class="grid-text">Geofísica</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://via.placeholder.com/500x400?text=Mapeo+Geologico">
+            <div class="grid-text">Mapeo y Geomecánica</div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <h1>Patricio Cárdenas</h1>
+        </div>
+        <div class="professional-title">Geólogo | Consultoría y Geología Digital</div>
+    </header>
+
+    <div class="main-container">
+        
+        <div class="project-block">
+            <div class="section-heading">Especialidad Principal</div>
+            <h2>Geología Digital y Modelado</h2>
+            <!-- Acá podés poner una imagen real de un reporte o modelo -->
+            <img src="https://via.placeholder.com/1000x500?text=Inserte+Captura+de+Modelo+Aqui" class="project-image-large">
+            <div class="description-box">
+                Escribí aquí sobre tu experiencia técnica. Podés mencionar el uso de Python, 
+                análisis de datos geológicos o cualquier software específico que utilices.
+            </div>
+        </div>
+
     </div>
 
 </body>
