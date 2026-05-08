@@ -3,47 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patricio Cárdenas | Geología</title>
+    <title>Patricio Cárdenas | Geología Digital</title>
     <style>
         body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fcfcfc; color: #222; }
 
-        /* Grid de Imágenes de Proyectos Geológicos */
+        /* Cuadrícula superior con tus imágenes reales */
         .top-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr); 
-            height: 280px;
+            height: 300px;
             background: #000;
         }
 
         .grid-item {
             position: relative;
             overflow: hidden;
-            border-right: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid rgba(255,255,255,0.1);
         }
 
         .grid-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.6;
+            opacity: 0.7;
             transition: 0.4s ease;
         }
 
-        .grid-item:hover img { opacity: 0.9; transform: scale(1.05); }
+        .grid-item:hover img { opacity: 1; transform: scale(1.05); }
 
         .grid-text {
             position: absolute;
             bottom: 0;
             padding: 20px;
             color: white;
-            font-size: 0.75em;
+            font-size: 0.8em;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
         }
 
-        /* Identidad Profesional */
+        /* Encabezado Profesional */
         header {
             background: #111;
             color: white;
@@ -55,25 +55,16 @@
             border: 3px solid white;
             display: inline-block;
             padding: 15px 30px;
-            margin-bottom: 10px;
         }
 
         .logo-container h1 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 2em;
             letter-spacing: 4px;
             text-transform: uppercase;
         }
 
-        .professional-title {
-            font-size: 0.9em;
-            letter-spacing: 2px;
-            opacity: 0.6;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        /* Contenido de Geología */
+        /* Contenido Principal */
         .main-container {
             max-width: 1000px;
             margin: 50px auto;
@@ -86,49 +77,34 @@
             margin-bottom: 30px;
             font-size: 1.2em;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .project-block {
-            margin-bottom: 60px;
-        }
-
-        .project-block h2 { font-size: 1.6em; margin-bottom: 15px; }
-
-        .project-image-large {
-            width: 100%;
-            height: auto;
-            border-radius: 2px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-
-        .description-box {
-            font-size: 1.05em;
-            color: #444;
+        .project-description {
+            font-size: 1.1em;
             line-height: 1.8;
+            color: #444;
         }
     </style>
 </head>
 <body>
 
-    <!-- Galería de Especialidades Geológicas -->
+    <!-- Galería superior usando tu carpeta 'imaganes' -->
     <div class="top-grid">
         <div class="grid-item">
-            <img src="https://via.placeholder.com/500x400?text=Hidrogeologia">
+            <img src="imaganes/hidrogeologia.png" alt="Hidrogeología">
             <div class="grid-text">Hidrogeología</div>
         </div>
         <div class="grid-item">
-            <img src="https://via.placeholder.com/500x400?text=Modelado+Matematico">
+            <img src="imaganes/modelo.png" alt="Modelado">
             <div class="grid-text">Modelado</div>
         </div>
         <div class="grid-item">
-            <img src="https://via.placeholder.com/500x400?text=Geofisica">
+            <img src="imaganes/geofisica.png" alt="Geofísica">
             <div class="grid-text">Geofísica</div>
         </div>
         <div class="grid-item">
-            <img src="https://via.placeholder.com/500x400?text=Mapeo+Geologico">
-            <div class="grid-text">Mapeo</div>
+            <img src="imaganes/mapeo.png" alt="Mapeo">
+            <div class="grid-text">Mapeo Geológico</div>
         </div>
     </div>
 
@@ -136,23 +112,22 @@
         <div class="logo-container">
             <h1>Patricio Cárdenas</h1>
         </div>
-        <div class="professional-title">Geólogo | Consultoría y Geología Digital</div>
+        <p style="margin-top: 15px; opacity: 0.6; letter-spacing: 2px; text-transform: uppercase;">
+            Geólogo | Consultoría y Geología Digital
+        </p>
     </header>
 
     <div class="main-container">
-        
-        <div class="project-block">
-            <div class="section-heading">Especialidad Principal</div>
-            <h2>Geología Digital y Modelado</h2>
-            <!-- Acá podés poner una imagen real de un reporte o modelo -->
-            <img src="https://via.placeholder.com/1000x500?text=Inserte+Captura+de+Modelo+Aqui" class="project-image-large">
-            <div class="description-box">
-                Escribí aquí sobre tu experiencia técnica. Podés mencionar el uso de Python, 
-                análisis de datos geológicos o cualquier software específico que utilices.
-            </div>
+        <div class="section-heading">Proyectos y Análisis Técnico</div>
+        <div class="project-description">
+            <p>Bienvenido a mi portal profesional. Aquí comparto mis trabajos enfocados en la geología técnica y digital.</p>
+            <p>Podés editar este texto para incluir detalles sobre tus prácticas en YMAD - Farallón Negro o tus trabajos de estimación de reservas.</p>
         </div>
-
     </div>
+
+    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8em;">
+        &copy; 2026 - San Miguel de Tucumán
+    </footer>
 
 </body>
 </html>
