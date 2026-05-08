@@ -1,2 +1,2 @@
-# Geolog-a-Digital-
+# Geologia-Digital-
 blog sobre geología y uso de programas para procesar datos geológicos
